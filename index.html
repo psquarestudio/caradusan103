@@ -228,9 +228,10 @@ const fr=frames(mob?'hm/':'hd/',141,p=>{cur=-1;
 function draw(k){const m=fr.get(k);if(!m)return;const W=cv.width,H=cv.height,iw=m.naturalWidth,ih=m.naturalHeight;
   cx.fillStyle='#f7f4ee';cx.fillRect(0,0,W,H);
   if(W/H>=1.2){const sc=Math.max(W/iw,H/ih);cx.drawImage(m,(W-iw*sc)/2,(H-ih*sc)/2,iw*sc,ih*sc);return}
-  /* uspravan ekran: slika preko cele širine, od vrha, zauzima najviše 2/3 visine */
-  const sc=Math.max(W/iw,H*.56/ih),w=iw*sc,h=ih*sc,mx=H*.68;
-  cx.drawImage(m,(W-w)/2,h>mx?mx-h:0,w,h)}
+  /* uspravan ekran: slika preko cele širine, počinje ispod naslovne trake da se vrh zgrade ne odseče */
+  const hd=document.querySelector('header'),y0=Math.round((hd?hd.offsetHeight:0)*W/innerWidth);
+  const sc=Math.max(W/iw,H*.5/ih),w=iw*sc,h=ih*sc;
+  cx.drawImage(m,(W-w)/2,y0,w,h)}
 let tgt=0,pos=0;
 function onS(){const r=hero.getBoundingClientRect(),t=cl(-r.top/(r.height-innerHeight));tgt=t;
   $('cap').style.opacity=t<.2?1:Math.max(0,1-(t-.2)*5);hint.style.opacity=t<.03?1:0;$('bar1').style.width=(t*100)+'%';
