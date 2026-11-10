@@ -4,6 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cara Dušana 103 · Zemun</title>
+<meta name="description" content="Nova stambena zgrada u Zemunu. Pogledajte kako zgrada niče, lokaciju iz vazduha, stanove po spratovima i prošetajte kroz stan.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cara Dušana 103 · Novi stanovi u Zemunu">
+<meta property="og:description" content="Nova stambena zgrada u Zemunu. Pogledajte kako zgrada niče, lokaciju iz vazduha, stanove po spratovima i prošetajte kroz stan.">
+<meta property="og:image" content="https://psquarestudio.github.io/caradusan103/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://psquarestudio.github.io/caradusan103/">
+<meta property="og:locale" content="sr_RS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f4ee;--paper:#fffdf9;--ink:#141414;--mute:#6f6a62;--acc:#b8924f;--acc2:#d4b06a;--card:rgba(255,253,249,.86);--line:rgba(20,20,20,.12);--serif:"Cormorant Garamond",Georgia,serif}
@@ -29,7 +42,7 @@ header span{font-size:11px;letter-spacing:.14em;color:var(--acc);border:1px soli
 #cv2{width:100%;height:100%;display:block}
 #render{position:absolute;inset:0;opacity:0;background:#000 center/cover no-repeat url(ulica_susedi.jpg);pointer-events:none}
 @media (max-aspect-ratio:1/1){#render{background-size:contain;background-color:#0b0d10}}
-.lab{box-shadow:0 10px 30px rgba(20,20,20,.12);position:absolute;left:16px;right:16px;bottom:28px;max-width:420px;background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:opacity .35s;opacity:0}
+.lab{box-shadow:0 10px 30px rgba(20,20,20,.12);position:absolute;left:16px;right:16px;bottom:calc(86px + env(safe-area-inset-bottom));max-width:420px;background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:opacity .35s;opacity:0}
 .lab small{color:var(--acc);letter-spacing:.14em;font-size:11px;font-weight:600}
 .lab h2{margin:6px 0 6px;font-size:27px;line-height:1.2}
 .lab p{margin:0;color:var(--mute);line-height:1.5;font-size:14.5px}
@@ -72,7 +85,7 @@ header span{font-size:11px;letter-spacing:.14em;color:var(--acc);border:1px soli
 .facts div{background:var(--paper);padding:20px 18px}.facts b{display:block;font-family:var(--serif);font-size:34px;font-weight:600;line-height:1}.facts span{display:block;margin-top:6px;color:var(--mute);font-size:13.5px}
 .gal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;margin:0 -20px;scrollbar-width:none}
 .gal img{flex:0 0 auto;width:84vw;max-width:620px;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:16px;scroll-snap-align:center;cursor:zoom-in;box-shadow:0 8px 26px rgba(20,20,20,.12)}
-#lb{position:fixed;inset:0;z-index:60;background:rgba(10,10,10,.92);display:none;align-items:center;justify-content:center}#lb.on{display:flex}#lb img{max-width:96vw;max-height:90vh;border-radius:10px}
+#lb{position:fixed;inset:0;z-index:60;background:rgba(10,10,10,.92);display:none;align-items:center;justify-content:center}#lb.on{display:flex}#lb img{max-width:96vw;max-height:84vh;border-radius:10px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 #kontakt{background:var(--ink);color:#f7f4ee;padding:70px 20px 40px}
 #kontakt .w{max-width:640px;margin:0 auto}#kontakt small{color:var(--acc2);letter-spacing:.14em;font-size:11px;font-weight:600}#kontakt h2{margin:8px 0 8px;font-size:42px;color:#fff}#kontakt p{color:#bdb6aa;line-height:1.55;margin:0 0 20px}
 #kf{display:grid;gap:10px}#kf input,#kf select,#kf textarea{width:100%;font:16px Inter,sans-serif;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff}
@@ -109,6 +122,23 @@ footer{background:var(--ink);color:#8d877c;font-size:12.5px;text-align:center;pa
 .poi{list-style:none;margin:0;padding:0}
 .poi li{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:16px}
 .poi em{font-style:normal;color:var(--mute);white-space:nowrap}
+#cta{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(247,244,238,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(110%);opacity:0;pointer-events:none;transition:transform .35s ease,opacity .35s ease}
+#cta.on{transform:none;opacity:1;pointer-events:auto}
+#cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;font:600 14.5px Inter,sans-serif;text-decoration:none;border-radius:26px;padding:13px 8px;color:var(--ink);background:var(--paper);border:1px solid var(--line);white-space:nowrap}
+#cta a.pr{background:var(--ink);color:#fff;border-color:var(--ink)}
+#cta svg{width:17px;height:17px;flex:0 0 auto}
+@media (min-width:760px){#cta{left:auto;right:20px;bottom:20px;border:1px solid var(--line);border-radius:36px;padding:8px;box-shadow:0 12px 34px rgba(20,20,20,.16)}#cta a{flex:0 0 auto;padding:12px 18px}}
+.st{display:inline-block;font:700 10.5px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:10px;align-self:flex-start}
+.st.s{background:#e3f0e4;color:#22663a}.st.r{background:#f6ead0;color:#8a6417}.st.p{background:#ebe8e2;color:#857f75}
+.pc .pr{font:700 16px Inter,sans-serif;color:var(--ink);margin-top:2px}
+.pc.sold{opacity:.62}.pc.sold img{filter:grayscale(1)}
+.sum{max-width:900px;margin:14px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px}
+.sum span{font:600 13px Inter,sans-serif;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:7px 12px}
+.sum span b{color:var(--acc)}
+#lb .nv{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:26px;cursor:pointer;line-height:1}
+#lb .nv.l{left:10px}#lb .nv.r{right:10px}#lb .lx{position:absolute;top:12px;right:14px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+#lb .lc{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:#cfc9bd;font:500 13px Inter,sans-serif;letter-spacing:.1em}
+footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))!important}
 #err{position:fixed;left:50%;top:60px;transform:translateX(-50%);z-index:30;background:#3a1616;border:1px solid #a33;border-radius:10px;padding:10px 14px;font-size:13px;display:none;max-width:92vw}
 </style>
 </head>
@@ -119,7 +149,7 @@ footer{background:var(--ink);color:#8d877c;font-size:12.5px;text-align:center;pa
   <div class="cap" id="cap"><small>NOVI STAMBENI PROJEKAT · ZEMUN</small><h1>Cara Dušana 103</h1>
   <p>Skroluj i gledaj kako zgrada niče. Početak gradnje novembar 2026, useljenje septembar 2028.</p>
   <button class="btn" id="goLoc">📍 Pogledaj lokaciju</button></div>
-  <div id="hint">SKROLUJ ↓</div></div></section>
+  <div id="hint">UČITAVANJE…</div></div></section>
 
 <section id="loc"><div class="stick"><canvas id="cv2"></canvas><div class="bar" id="bar2"></div>
   <div class="lab" id="l1"><small>LOKACIJA · 1/5</small><h2>Zemun, na obali Dunava</h2><p>Najstariji deo Beograda sa dušom malog grada, a samo nekoliko minuta vožnje od Novog Beograda.</p></div>
@@ -133,14 +163,15 @@ footer{background:var(--ink);color:#8d877c;font-size:12.5px;text-align:center;pa
 <section class="sec" id="fakti"><small>O PROJEKTU</small><h2>Cara Dušana 103</h2><p>Moderna stambena zgrada u mirnom delu Zemuna, sa pažljivo osmišljenim stanovima od garsonjera do dvosobnih sa terasom.</p>
 <div class="facts"><div><b>P+5</b><span>spratnost</span></div><div><b>24–52</b><span>m², od garsonjera do dvosobnih</span></div><div><b>Lift</b><span>i garaža u prizemlju</span></div><div><b>11/2026</b><span>početak gradnje</span></div><div><b>09/2028</b><span>useljenje</span></div><div><b>4</b><span>tipa stanova</span></div></div></section>
 
-<section id="stan"><div class="hd"><small>04 · STANOVI</small><h2>Izaberi sprat</h2><p>Dodirni sprat na zgradi i pogledaj tipove stanova na njemu.</p></div>
+<section id="stan"><div class="hd"><small>STANOVI</small><h2>Izaberi sprat</h2><p>Dodirni sprat na zgradi i pogledaj tipove stanova na njemu.</p></div>
 <div class="fac"><div class="in"><img src="ulica_susedi.jpg" alt="Cara Dušana 103, pogled sa ulice"><div id="fls"></div></div></div>
-
+<div class="sum" id="sum"></div>
+<p class="note" style="margin-top:10px">Cene i dostupnost su primer za demo. Na pravom sajtu investitor ih menja sam.</p>
 </section>
-<div id="pop"><div class="pb"><div class="ph"><b id="popt"></b><button id="popx" aria-label="Zatvori">×</button></div><p>Tipovi stanova na spratu</p><div class="pg" id="popg"></div></div></div>
+<div id="pop"><div class="pb"><div class="ph"><b id="popt"></b><button id="popx" aria-label="Zatvori">×</button></div><p id="pops"></p><div class="pg" id="popg"></div></div></div>
 <div id="modal"><button class="x" id="mx">×</button><img id="mi" alt="Raspored stana"><h3 id="mt"></h3><p id="mp"></p><button class="btn" id="tourBtn" style="display:none">▶ Prošetaj kroz stan</button></div>
 
-<section id="ture"><small>05 · PROŠETAJ KROZ STAN</small><h2>Uđi u stan</h2><p>Izaberi stan, pa dodirni sobu u koju želiš da uđeš.</p>
+<section id="ture"><small>PROŠETAJ KROZ STAN</small><h2>Uđi u stan</h2><p>Izaberi stan, pa dodirni sobu u koju želiš da uđeš.</p>
 <div class="tc"><button class="card" data-t="s32"><div class="ph" style="background-image:url(stan32/cover.jpg)"><img src="plans/s32.jpg" alt=""></div><div class="bd"><b>Jednoiposobni</b><span class="m">32 m² · ulaz, kupatilo, dnevna sa kuhinjom, spavaća</span><span class="go">▶ Uđi u stan</span></div></button>
 <button class="card" data-t="d52"><div class="ph" style="background-image:url(stan52/cover.jpg)"><img src="plans/d52.jpg" alt=""></div><div class="bd"><b>Dvosobni sa terasom</b><span class="m">52 m² · dnevna sa kuhinjom i terasom, spavaća</span><span class="go">▶ Uđi u stan</span></div></button></div>
 <p class="note" style="padding:0;margin-top:12px">Enterijer je ilustracija napravljena na osnovu rasporeda.</p></section>
@@ -149,44 +180,77 @@ footer{background:var(--ink);color:#8d877c;font-size:12.5px;text-align:center;pa
 <section class="sec" id="galerija"><small>GALERIJA</small><h2>Pogledaj zgradu</h2><p>Prevuci levo-desno, dodirni za uvećanje.</p>
 <div class="gal" id="gal"><img src="gal/r1.jpg" alt="Render 1" loading="lazy"><img src="gal/r6.jpg" alt="Render 6" loading="lazy"><img src="gal/r3.jpg" alt="Render 3" loading="lazy"><img src="gal/r4.jpg" alt="Render 4" loading="lazy"><img src="gal/r5.jpg" alt="Render 5" loading="lazy"><img src="gal/r2.jpg" alt="Render 2" loading="lazy"><img src="gal/r7.jpg" alt="Render 7" loading="lazy"></div></section>
 
-<section id="near"><small>06 · U BLIZINI</small><h2>Sve na par minuta</h2><ul class="poi" id="poi"></ul>
+<section id="near"><small>U BLIZINI</small><h2>Sve na par minuta</h2><ul class="poi" id="poi"></ul>
 <p style="color:var(--mute);font-size:13px;margin-top:14px">Okvirno vreme po vazdušnoj liniji.</p></section>
-<section id="kontakt"><div class="w"><small>07 · KONTAKT</small><h2>Zakaži razgledanje</h2><p>Ostavi kontakt i javićemo se sa cenama, rasporedima i terminom za obilazak.</p>
+<section id="kontakt"><div class="w"><small>KONTAKT</small><h2>Zakaži razgledanje</h2><p>Ostavi kontakt i javićemo se sa cenama, rasporedima i terminom za obilazak.</p>
 <form id="kf"><div class="row"><input required name="ime" placeholder="Ime i prezime" autocomplete="name"><input required name="tel" type="tel" placeholder="Telefon" autocomplete="tel"></div>
 <input name="mail" type="email" placeholder="Email (opciono)" autocomplete="email">
 <select name="stan"><option>Zanima me: bilo koji stan</option><option>Garsonjera 24–28 m²</option><option>Jednoiposobni 32 m²</option><option>Dvosobni do 52 m²</option></select>
 <textarea name="poruka" placeholder="Poruka (opciono)"></textarea><button type="submit">Pošalji upit</button></form>
 <div id="ok">Hvala! Ovo je demo sajta, pa upit nije stvarno poslat. Na pravom sajtu stiže direktno prodaji.</div></div></section>
 <footer>Koncept prezentacije · Cara Dušana 103, Zemun · Nije zvanični sajt investitora. Prikazi su ilustracija.</footer>
-<div id="lb"><img id="lbi" alt=""></div>
+<div id="lb"><img id="lbi" alt=""><button class="lx" aria-label="Zatvori">×</button><button class="nv l" aria-label="Prethodna">‹</button><button class="nv r" aria-label="Sledeća">›</button><div class="lc" id="lbc"></div></div>
+<nav id="cta" aria-label="Brz kontakt"><a class="pr" href="tel:+381600000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Pozovi</a><a href="viber://chat?number=%2B381600000000">Viber</a><a href="https://wa.me/381600000000" target="_blank" rel="noopener">WhatsApp</a></nav>
 <div id="err"></div>
 
 <script>
-(()=>{const N=141,imgs=[],cv=document.getElementById('cv'),cx=cv.getContext('2d'),hero=document.getElementById('hero');let cur=-1;
-for(let i=1;i<=N;i++){const im=new Image();im.src='hs/h'+String(i).padStart(3,'0')+'.jpg';if(i===1)im.onload=()=>{cur=-1};imgs.push(im)}
-function size(){const d=Math.min(2,devicePixelRatio||1);cv.width=innerWidth*d;cv.height=innerHeight*d;cur=-1}
-function draw(k){let m=imgs[k];if(!m.complete||!m.naturalWidth){for(let j=k;j>=0;j--)if(imgs[j].complete&&imgs[j].naturalWidth){m=imgs[j];break}}
-  if(!m||!m.naturalWidth)return;const W=cv.width,H=cv.height,iw=m.naturalWidth,ih=m.naturalHeight,sc=Math.max(W/iw,H/ih),sf=Math.min(W/iw,H/ih);
+const $=id=>document.getElementById(id),cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+
+/* ---------- Prozori: dugme "nazad" na telefonu zatvara prozor ---------- */
+const OV=[];
+function ovOpen(close){OV.push(close);try{history.pushState({ov:OV.length},'')}catch(e){}}
+function ovClose(){if(!OV.length)return;if(history.state&&history.state.ov)history.back();else OV.pop()()}
+addEventListener('popstate',()=>{const c=OV.pop();if(c)c()});
+addEventListener('keydown',e=>{if(e.key==='Escape')ovClose()});
+
+/* ---------- Sličice animacije: prvo svaka osma, pa se popunjava ---------- */
+function frames(dir,N,onProg){
+  const imgs=Array(N).fill(null),order=[],seen=new Set();
+  [8,4,2,1].forEach(st=>{for(let i=0;i<N;i+=st)if(!seen.has(i)){seen.add(i);order.push(i)}});
+  let q=0,done=0,act=0,started=false;
+  function next(){while(act<6&&q<order.length){const i=order[q++],im=new Image();act++;
+    im.onload=()=>{imgs[i]=im;act--;done++;onProg(done/N);next()};
+    im.onerror=()=>{act--;done++;onProg(done/N);next()};
+    im.src=dir+String(i+1).padStart(3,'0')+'.webp'}}
+  return{N,start(){if(!started){started=true;next()}},
+    get(k){for(let d=0;d<N;d++){if(k-d>=0&&imgs[k-d])return imgs[k-d];if(k+d<N&&imgs[k+d])return imgs[k+d]}return null}};
+}
+function fit(cv){const d=Math.min(2,devicePixelRatio||1);cv.width=Math.round(innerWidth*d);cv.height=Math.round(cv.clientHeight*d)||Math.round(innerHeight*d)}
+
+/* ---------- Početak: gradnja ---------- */
+let zoomFr;
+(()=>{const cv=$('cv'),cx=cv.getContext('2d'),hero=$('hero'),hint=$('hint');let cur=-1,ready=false;
+const mob=innerWidth/innerHeight<1.2;
+const fr=frames(mob?'hm/':'hd/',141,p=>{cur=-1;
+  if(!ready&&p>=.13){ready=true;hint.textContent='SKROLUJ ↓'}
+  else if(!ready)hint.textContent='UČITAVANJE '+Math.round(p/.13*100)+'%';
+  if(p>=.3&&zoomFr)zoomFr.start()});
+function draw(k){const m=fr.get(k);if(!m)return;const W=cv.width,H=cv.height,iw=m.naturalWidth,ih=m.naturalHeight;
   cx.fillStyle='#f7f4ee';cx.fillRect(0,0,W,H);
-  if(W/H>=1.2){cx.drawImage(m,(W-iw*sc)/2,(H-ih*sc)/2,iw*sc,ih*sc);return}
-  const w=iw*sf,h=ih*sf;cx.drawImage(m,(W-w)/2,H*.34-h/2,w,h)}
-let tgt=0,pos=0;function onS(){const r=hero.getBoundingClientRect(),t=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));tgt=t;
-  document.getElementById('cap').style.opacity=t<.2?1:Math.max(0,1-(t-.2)*5);document.getElementById('hint').style.opacity=t<.03?1:0;document.getElementById('bar1').style.width=(t*100)+'%'}
-function loop(){pos+=(tgt-pos)*.18;const k=Math.round(pos*(N-1));if(k!==cur){cur=k;draw(k)}requestAnimationFrame(loop)}
-addEventListener('resize',size);addEventListener('scroll',onS,{passive:true});size();onS();loop();
-document.getElementById('goLoc').onclick=()=>document.getElementById('loc').scrollIntoView({behavior:'smooth'});})();
-</script>
-<script>
+  if(W/H>=1.2){const sc=Math.max(W/iw,H/ih);cx.drawImage(m,(W-iw*sc)/2,(H-ih*sc)/2,iw*sc,ih*sc);return}
+  /* uspravan ekran: slika preko cele širine, od vrha, zauzima najviše 2/3 visine */
+  const sc=Math.max(W/iw,H*.56/ih),w=iw*sc,h=ih*sc,mx=H*.68;
+  cx.drawImage(m,(W-w)/2,h>mx?mx-h:0,w,h)}
+let tgt=0,pos=0;
+function onS(){const r=hero.getBoundingClientRect(),t=cl(-r.top/(r.height-innerHeight));tgt=t;
+  $('cap').style.opacity=t<.2?1:Math.max(0,1-(t-.2)*5);hint.style.opacity=t<.03?1:0;$('bar1').style.width=(t*100)+'%';
+  if(t>.3&&zoomFr)zoomFr.start()}
+function loop(){pos+=(tgt-pos)*.18;const k=Math.round(pos*(fr.N-1));if(k!==cur){cur=k;draw(k)}requestAnimationFrame(loop)}
+function size(){fit(cv);cur=-1}
+addEventListener('resize',size);addEventListener('scroll',onS,{passive:true});size();onS();fr.start();loop();
+$('goLoc').onclick=()=>$('loc').scrollIntoView({behavior:'smooth'})})();
+
+/* ---------- U blizini ---------- */
 const SITE={lat:44.851946,lng:20.394923};
 const POIS=[{n:'Glavna ulica',lat:44.8434,lng:20.4113},{n:'Zemunska pijaca',lat:44.8443,lng:20.4099},{n:'Gardoš kula',lat:44.8487,lng:20.4097},{n:'Kej oslobođenja (Dunav)',lat:44.8462,lng:20.4142},{n:'Ušće, Novi Beograd',lat:44.8159,lng:20.4366,car:true}];
-const rad=d=>d*Math.PI/180,cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const rad=d=>d*Math.PI/180;
 const dist=(a,b)=>{const dl=rad(b.lat-a.lat),dn=rad(b.lng-a.lng);const h=Math.sin(dl/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dn/2)**2;return 2*6371000*Math.asin(Math.sqrt(h))};
-document.getElementById('poi').innerHTML=POIS.map(p=>{const d=dist(SITE,p)*1.25;return '<li>'+p.n+'<em>'+(p.car?Math.max(3,Math.round(d/1000/25*60))+' min kolima':Math.max(1,Math.round(d/1000/4.8*60))+' min peške')+'</em></li>'}).join('');
-(()=>{const N=141,imgs=[],cv=document.getElementById('cv2'),cx=cv.getContext('2d'),loc=document.getElementById('loc'),labs=['l1','l2','l3','l4','l5'].map(i=>document.getElementById(i));let cur=-1;
-for(let i=1;i<=N;i++){const im=new Image();im.loading='eager';im.src='zoom/z'+String(i).padStart(3,'0')+'.jpg';imgs.push(im)}
-function size(){const d=Math.min(2,devicePixelRatio||1);cv.width=innerWidth*d;cv.height=innerHeight*d;cur=-1}
-function draw(k){let m=imgs[k];if(!m.complete||!m.naturalWidth){for(let j=k;j>=0;j--)if(imgs[j].complete&&imgs[j].naturalWidth){m=imgs[j];break}}
-  if(!m||!m.naturalWidth)return;const W=cv.width,H=cv.height,iw=m.naturalWidth,ih=m.naturalHeight,sc=Math.max(W/iw,H/ih),sf=Math.min(W/iw,H/ih);
+$('poi').innerHTML=POIS.map(p=>{const d=dist(SITE,p)*1.25;return '<li>'+p.n+'<em>'+(p.car?Math.max(3,Math.round(d/1000/25*60))+' min kolima':Math.max(1,Math.round(d/1000/4.8*60))+' min peške')+'</em></li>'}).join('');
+
+/* ---------- Lokacija: let od Dunava ---------- */
+(()=>{const cv=$('cv2'),cx=cv.getContext('2d'),loc=$('loc'),labs=['l1','l2','l3','l4','l5'].map($);let cur=-1;
+const fr=zoomFr=frames('zm/',141,()=>{cur=-1});
+function draw(k){const m=fr.get(k);if(!m)return;const W=cv.width,H=cv.height,iw=m.naturalWidth,ih=m.naturalHeight,sc=Math.max(W/iw,H/ih),sf=Math.min(W/iw,H/ih);
   cx.fillStyle='#f7f4ee';cx.fillRect(0,0,W,H);
   if(W/H<1){cx.drawImage(m,(W-iw*sc)/2,(H-ih*sc)/2,iw*sc,ih*sc);return}
   if(typeof cx.filter==='string'){cx.filter='blur(40px) saturate(1.1)';cx.drawImage(m,(W-iw*sc*1.1)/2,(H-ih*sc*1.1)/2,iw*sc*1.1,ih*sc*1.1);cx.filter='none'}
@@ -194,47 +258,74 @@ function draw(k){let m=imgs[k];if(!m.complete||!m.naturalWidth){for(let j=k;j>=0
   bx.drawImage(m,(bw-iw*bs)/2,(bh-ih*bs)/2,iw*bs,ih*bs);b2.width=bw*4;b2.height=bh*4;const b2x=b2.getContext('2d');b2x.imageSmoothingQuality='high';b2x.drawImage(bc,0,0,b2.width,b2.height);cx.imageSmoothingQuality='high';cx.drawImage(b2,0,0,W,H)}
   cx.fillStyle='rgba(20,18,14,.28)';cx.fillRect(0,0,W,H);
   const w=iw*sf,h=ih*sf;cx.shadowColor='rgba(0,0,0,.45)';cx.shadowBlur=60;cx.drawImage(m,(W-w)/2,(H-h)/2,w,h);cx.shadowBlur=0}
-let tgt=0,pos=0;function onS(){const r=loc.getBoundingClientRect();tgt=cl(-r.top/(r.height-innerHeight))}
-function loop(){pos+=(tgt-pos)*.18;const v=cl(pos/.92),k=Math.round(v*(N-1));if(k!==cur){cur=k;draw(k)}
+let tgt=0,pos=0;function onS(){const r=loc.getBoundingClientRect();tgt=cl(-r.top/(r.height-innerHeight));if(r.top<innerHeight*2)fr.start()}
+function loop(){pos+=(tgt-pos)*.18;const v=cl(pos/.92),k=Math.round(v*(fr.N-1));if(k!==cur){cur=k;draw(k)}
   const LR=[[0,.16],[.2,.38],[.42,.6],[.64,.84],[.9,1.01]];labs.forEach((l,i)=>l.style.opacity=pos>=LR[i][0]&&pos<LR[i][1]?1:0);
-  document.getElementById('bar2').style.width=(pos*100)+'%';requestAnimationFrame(loop)}
-addEventListener('resize',size);addEventListener('scroll',onS,{passive:true});size();onS();loop();})();
-</script>
-<script>
+  $('bar2').style.width=(pos*100)+'%';requestAnimationFrame(loop)}
+function size(){fit(cv);cur=-1}
+addEventListener('resize',size);addEventListener('scroll',onS,{passive:true});size();onS();loop()})();
+
+/* ---------- Stanovi: dostupnost i cene po spratu ---------- */
 (()=>{const PM=2900,eur=n=>n.toLocaleString('de-DE')+' €';
-const T={g24:{n:'Garsonjera',m:24,img:'g24'},g26:{n:'Garsonjera',m:26,img:'g24'},g28:{n:'Garsonjera',m:28,img:'g28'},s32:{n:'Jednoiposobni',m:32,img:'s32'},d52:{n:'Dvosobni',m:52,img:'d52'},d52t:{n:'Dvosobni sa terasom',m:52,img:'d52'}};
+/* s = slobodan, r = rezervisan, p = prodat. Redosled na spratu: garsonjera 24/26, garsonjera 28, jednoiposobni 32, dvosoban 52 */
+const AV={1:'pprs',2:'psps',3:'srss',4:'sssr',5:'rsss'};
+const SN={s:'Slobodan',r:'Rezervisan',p:'Prodat'};
+const units=k=>[{n:'Garsonjera',m:k%2?24:26,img:'g24'},{n:'Garsonjera',m:28,img:'g28'},{n:'Jednoiposobni',m:32,img:'s32',t:1},{n:k==5?'Dvosobni sa terasom':'Dvosobni',m:52,img:'d52',t:1}]
+  .map((u,i)=>({...u,id:k+'0'+(i+1),st:AV[k][i],pr:Math.round(u.m*PM*(1+(k-1)*.02)/100)*100}));
+const free=k=>units(k).filter(u=>u.st=='s').length;
+const fw=n=>n==1?'1 slobodan':n<5?n+' slobodna':n+' slobodnih';
 const F=[{k:5,y:15,h:10.4},{k:4,y:25.4,h:11.7},{k:3,y:37.1,h:11.1},{k:2,y:48.2,h:11},{k:1,y:59.2,h:9.8}];
-const TY=[{n:'Garsonjera',m:'24–26 m²',img:'g24'},{n:'Garsonjera',m:'28 m²',img:'g28'},{n:'Jednoiposobni',m:'32 m²',img:'s32',t:1},{n:'Dvosobni',m:'do 52 m²',img:'d52',t:1}];
-const fls=document.getElementById('fls'),pop=document.getElementById('pop'),pg=document.getElementById('popg');
-F.forEach(f=>{const b=document.createElement('button');b.className='fl'+(f.k==3?' hint':'');b.style.top=f.y+'%';b.style.height=f.h+'%';b.innerHTML='<span>'+f.k+'. sprat</span>';b.onclick=()=>pick(f.k);b.dataset.k=f.k;fls.append(b)});
+const fls=$('fls'),pop=$('pop'),pg=$('popg'),modal=$('modal'),mi=$('mi'),mt=$('mt'),mp=$('mp');
+F.forEach(f=>{const b=document.createElement('button');b.className='fl'+(f.k==3?' hint':'');b.style.top=f.y+'%';b.style.height=f.h+'%';b.innerHTML='<span>'+f.k+'. sprat · '+fw(free(f.k))+'</span>';b.onclick=()=>pick(f.k);b.dataset.k=f.k;fls.append(b)});
+const all=[1,2,3,4,5].flatMap(units),fr=all.filter(u=>u.st=='s');
+$('sum').innerHTML='<span><b>'+fr.length+'</b> od '+all.length+' stanova slobodno</span><span>Cene od <b>'+eur(Math.min(...fr.map(u=>u.pr)))+'</b></span><span>'+eur(PM)+' / m² sa PDV-om</span>';
 function pick(k){[...fls.children].forEach(e=>{e.classList.remove('hint');e.classList.toggle('on',e.dataset.k==k)});
-  document.getElementById('popt').textContent=k+'. sprat';
-  pg.innerHTML=TY.map(t=>'<button class="pc" data-img="'+t.img+'" data-t="'+(t.t?1:'')+'"><img src="plans/'+t.img+'.jpg" alt=""><b>'+t.n+'</b><span>'+t.m+'</span>'+(t.t?'<em>▶ Prošetaj kroz stan</em>':'<em class="g">Pogledaj raspored</em>')+'</button>').join('');
-  pg.querySelectorAll('.pc').forEach(b=>b.onclick=()=>{if(b.dataset.t){pop.classList.remove('on');openTour(b.dataset.img)}else{const t=TY.find(x=>x.img==b.dataset.img);mi.src='plans/'+t.img+'.jpg';mt.textContent=t.n+' · '+t.m;mp.textContent=k+'. sprat';modal.classList.add('on')}});
-  pop.classList.add('on')}
-document.getElementById('popx').onclick=()=>pop.classList.remove('on');pop.onclick=e=>{if(e.target===pop)pop.classList.remove('on')};
-const modal=document.getElementById('modal'),mi=document.getElementById('mi'),mt=document.getElementById('mt'),mp=document.getElementById('mp');
-document.getElementById('mx').onclick=()=>modal.classList.remove('on');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on')};
+  const us=units(k);$('popt').textContent=k+'. sprat';$('pops').textContent=fw(free(k))+' od '+us.length+' stana na ovom spratu';
+  pg.innerHTML=us.map((u,i)=>'<button class="pc'+(u.st=='p'?' sold':'')+'" data-i="'+i+'"><img src="plans/'+u.img+'.jpg" alt=""><span class="st '+u.st+'">'+SN[u.st]+'</span><b>'+u.n+'</b><span>Stan '+u.id+' · '+u.m+' m²</span>'
+    +(u.st=='p'?'':'<span class="pr">'+eur(u.pr)+'</span>')+(u.t?'<em>▶ Prošetaj kroz stan</em>':'<em class="g">Pogledaj raspored</em>')+'</button>').join('');
+  pg.querySelectorAll('.pc').forEach(b=>b.onclick=()=>{const u=us[+b.dataset.i];
+    if(u.t)openTour(u.img);
+    else{mi.src='plans/'+u.img+'.jpg';mt.textContent=u.n+' · '+u.m+' m²';mp.textContent='Stan '+u.id+' · '+k+'. sprat · '+(u.st=='p'?'prodat':eur(u.pr));modal.classList.add('on');ovOpen(()=>modal.classList.remove('on'))}});
+  pop.classList.add('on');ovOpen(()=>pop.classList.remove('on'))}
+$('popx').onclick=ovClose;pop.onclick=e=>{if(e.target===pop)ovClose()};
+$('mx').onclick=ovClose;modal.onclick=e=>{if(e.target===modal)ovClose()};
 })();
-</script>
-<script>
+
+/* ---------- Šetnja kroz stan ---------- */
 const TOURS={s32:{n:'Jednoiposobni · 32 m²',src:'stan32/tura.mp4',r:[['Ulaz',0],['Kupatilo',4.95],['Dnevna i kuhinja',9.95],['Spavaća soba',14.9]]},
  d52:{n:'Dvosobni sa terasom · 52 m²',src:'stan52/tura.mp4',r:[['Raspored',0],['Dnevna i kuhinja',4.95],['Spavaća soba',9.9]]}};
-const tvEl=document.getElementById('tv'),tvv=document.getElementById('tvv'),tvm=document.getElementById('tvm'),tvr=document.getElementById('tvr');let TT=null,stopAt=null;
+const tvEl=$('tv'),tvv=$('tvv'),tvm=$('tvm'),tvr=$('tvr');let TT=null,stopAt=null;
 function setRoom(i){[...tvm.children].forEach((b,j)=>b.classList.toggle('on',j==i));tvr.textContent=TT.r[i][0]}
 function goRoom(i){const t=TT.r[i][1];setRoom(i);if(t>tvv.currentTime+.2){stopAt=t;tvv.play()}else{tvv.pause();stopAt=null;tvv.currentTime=t}}
 (function chk(){if(stopAt!=null&&tvv.currentTime>=stopAt-.06){tvv.pause();stopAt=null}requestAnimationFrame(chk)})();
-function openTour(k){TT=TOURS[k];document.getElementById('tvt').textContent=TT.n;tvv.src=TT.src;tvv.currentTime=0;
+function openTour(k){TT=TOURS[k];$('tvt').textContent=TT.n;tvv.src=TT.src;
   tvm.innerHTML=TT.r.map((r,i)=>'<button>'+(i==0?'':'→ ')+r[0]+'</button>').join('')+'<button>▶ Cela šetnja</button>';
   [...tvm.children].forEach((b,i)=>b.onclick=()=>{if(i<TT.r.length)goRoom(i);else{setRoom(0);tvv.currentTime=0;stopAt=null;tvv.play()}});
-  setRoom(0);tvEl.classList.add('on');document.body.style.overflow='hidden';tvv.load()}
+  setRoom(0);tvEl.classList.add('on');document.body.style.overflow='hidden';tvv.load();
+  ovOpen(()=>{tvv.pause();tvEl.classList.remove('on');document.body.style.overflow=''})}
 tvv.addEventListener('timeupdate',()=>{if(stopAt==null&&!tvv.paused&&TT){let i=0;TT.r.forEach((r,j)=>{if(tvv.currentTime>=r[1]-.1)i=j});setRoom(i)}});
-document.getElementById('tvx').onclick=()=>{tvv.pause();tvEl.classList.remove('on');document.body.style.overflow=''};
+$('tvx').onclick=ovClose;
 document.querySelectorAll('.card').forEach(c=>c.onclick=()=>openTour(c.dataset.t));
-</script>
-<script>
-document.getElementById('kf').onsubmit=e=>{e.preventDefault();e.target.style.display='none';document.getElementById('ok').style.display='block'};
-const lb=document.getElementById('lb'),lbi=document.getElementById('lbi');document.querySelectorAll('#gal img').forEach(i=>i.onclick=()=>{lbi.src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+
+/* ---------- Kontakt forma (demo) ---------- */
+$('kf').onsubmit=e=>{e.preventDefault();e.target.style.display='none';$('ok').style.display='block'};
+
+/* ---------- Galerija: uvećanje sa prevlačenjem ---------- */
+(()=>{const lb=$('lb'),lbi=$('lbi'),gi=[...document.querySelectorAll('#gal img')];let ix=0,x0=null;
+function show(i){ix=(i+gi.length)%gi.length;lbi.src=gi[ix].src;$('lbc').textContent=(ix+1)+' / '+gi.length}
+gi.forEach((im,i)=>im.onclick=()=>{show(i);lb.classList.add('on');ovOpen(()=>lb.classList.remove('on'))});
+lb.querySelector('.l').onclick=e=>{e.stopPropagation();show(ix-1)};
+lb.querySelector('.r').onclick=e=>{e.stopPropagation();show(ix+1)};
+lb.querySelector('.lx').onclick=e=>{e.stopPropagation();ovClose()};
+lbi.onclick=e=>e.stopPropagation();lb.onclick=ovClose;
+lb.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)show(ix+(dx<0?1:-1))},{passive:true});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='ArrowLeft')show(ix-1);if(e.key==='ArrowRight')show(ix+1)})})();
+
+/* ---------- Dugmad za brz kontakt: posle početka, sakrivena kod forme ---------- */
+(()=>{const cta=$('cta'),hero=$('hero'),kon=$('kontakt');
+function u(){const past=scrollY>hero.offsetHeight*.45,atK=kon.getBoundingClientRect().top<innerHeight*.75;cta.classList.toggle('on',past&&!atK)}
+addEventListener('scroll',u,{passive:true});u()})();
 </script>
 </body>
 </html>
